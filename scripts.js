@@ -14,8 +14,6 @@ Book.prototype.info = function(){
 
 const firstBook = new Book('Book Name Example ', 'John book', '200', 'read already');
 
-let insert = document.querySelector(".add-book");
-insert.addEventListener("click", addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook));
 //add new book function
 function addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook) {
     titleOfBook = document.querySelector(".title-input").value;
@@ -23,9 +21,21 @@ function addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook) 
     pagesOfBook = document.querySelector(".pages-input").value;
     statusOfBook = document.querySelector(".status-input").value;
 
+    if(titleOfBook == "" || authorOfBook == "" || pagesOfBook == "" || statusOfBook == "") {
+        newBook == null;
+        return;
+    }
+
     let newBook = new Book(titleOfBook, authorOfBook, pagesOfBook, statusOfBook);
-    console.log(newBook.info());
 
     myLibrary.push(newBook);
-    console.log(myLibrary);
+    return newBook;
 }
+
+//show book in document
+function displayBook(){
+    
+}
+
+// let insert = document.querySelector(".add-book");
+// insert.addEventListener("click", addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook));
