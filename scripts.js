@@ -72,24 +72,29 @@ function displayBook(newBook){
     mainDiv.appendChild(div);
 
      removeBook();
+     function removeBook(){
+        let removeBtn = document.createElement('button');
+        removeBtn.textContent = "Delete Book"
+    
+        let mainDiv = document.getElementById('books');
+        mainDiv.appendChild(removeBtn);
+    
+        removeBtn.onclick = function(){
+            mainDiv.removeChild(div);
+            removeBtn.remove();
+            //console.log(myLibrary.splice(id)); 
+
+        }
+    
+    }
+    //clear page after element has been created
 }
+//create function to display all books from the array
 
 function showForm(){
     form.style.visibility = "visible";
 }
-function removeBook(){
-    let removeBtn = document.createElement('button');
-    removeBtn.textContent = "Delete Book"
 
-    let mainDiv = document.getElementById('books');
-    mainDiv.appendChild(removeBtn);
-
-    // removeBtn.onclick = function(){
-    //     mainDiv.removeChild(div);
-    //     console.log(myLibrary.splice(id)); 
-    // }
-
-}
 
 formButton[0].addEventListener('click', showForm);
 addNewBook[0].addEventListener('click', addBookToLibrary);
