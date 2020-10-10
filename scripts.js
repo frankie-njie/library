@@ -20,7 +20,7 @@ const firstBook = new Book('Book Name Example ', 'John book', '200', 'read alrea
 
 //add new book function
 function addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook) {
-    idOfBook = myLibrary.length + 1;
+    idOfBook = myLibrary.length ;
     titleOfBook = document.querySelector(".title-input").value;
     authorOfBook = document.querySelector(".author-input").value;
     pagesOfBook = document.querySelector(".pages-input").value;
@@ -49,6 +49,7 @@ function displayBook(newBook){
     //     )
     // });
     let div = document.createElement('div');
+    div.classList.add("book-single");
 
     let title = document.createElement('p');
     title.innerHTML = newBook.title;
@@ -62,7 +63,6 @@ function displayBook(newBook){
     let status = document.createElement('p');
     status.innerHTML = newBook.status;
 
-    
     div.appendChild(title);
     div.appendChild(author);
     div.appendChild(pages);
@@ -71,21 +71,20 @@ function displayBook(newBook){
     let mainDiv = document.getElementById('books');
     mainDiv.appendChild(div);
 
+    //remove book button
      removeBook();
      function removeBook(){
         let removeBtn = document.createElement('button');
         removeBtn.textContent = "Delete Book"
     
-        let mainDiv = document.getElementById('books');
-        mainDiv.appendChild(removeBtn);
+        // let mainDiv = document.getElementById('books');
+        div.appendChild(removeBtn);
     
         removeBtn.onclick = function(){
             mainDiv.removeChild(div);
             removeBtn.remove();
-            //console.log(myLibrary.splice(id)); 
-
+            console.log(myLibrary.splice(newBook.id)); 
         }
-    
     }
     //clear page after element has been created
 }
