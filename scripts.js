@@ -26,20 +26,24 @@ function addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook) 
     pagesOfBook = document.querySelector(".pages-input").value;
     statusOfBook = document.querySelector(".status-input").checked;
 
-    // if(titleOfBook == "" || authorOfBook == "" || pagesOfBook == "" || statusOfBook == "") {
-    //     newBook == undefined;
-    //     return;
-    // }
+    let form = document.getElementById('form');
 
-    let newBook = new Book(idOfBook,titleOfBook, authorOfBook, pagesOfBook, statusOfBook);
+    if(titleOfBook == "" || authorOfBook == "" || pagesOfBook == "" ) {
+        alert("Enter a Book name and author ");
+        return;
+    }else{
+        let newBook = new Book(idOfBook,titleOfBook, authorOfBook, pagesOfBook, statusOfBook);
 
-    myLibrary.push(newBook);
-    displayBook(newBook);
+        myLibrary.push(newBook);
+        displayBook(newBook);
+        form.reset();
+    }
+
 }
 
-//show book in document
+//Create and display book
 function displayBook(newBook){
-    
+
     // myLibrary.forEach((book, index) => {
     //     console.log(book);
     //     return(
@@ -49,7 +53,7 @@ function displayBook(newBook){
     //     )
     // });
     let div = document.createElement('div');
-    div.classList.add("book-single");
+    div.classList.add("single-book");
 
     let title = document.createElement('p');
     title.innerHTML = newBook.title;
@@ -63,21 +67,39 @@ function displayBook(newBook){
     let status = document.createElement('p');
     status.innerHTML = newBook.status;
 
+    let bookStatusBtn = document.createElement('button')
+    bookStatusBtn.innerHTML = "Book Status"
+
     div.appendChild(title);
     div.appendChild(author);
     div.appendChild(pages);
     div.appendChild(status);
+    div.appendChild(bookStatusBtn);
 
     let mainDiv = document.getElementById('books');
     mainDiv.appendChild(div);
 
+    // Status text
+    if(newBook.status === true){
+        status.innerHTML = "Read";
+    }else{
+        status.innerHTML = "Unread";
+    }
+
+    //Status button
+    bookStatusBtn.onclick = function (){
+        if(status.innerHTML === "Read"){
+            status.innerHTML = "Unread";
+        } else if(status.innerHTML === "Unread"){
+            status.innerHTML = "Read"
+        }
+    }
+
     //remove book button
-     removeBook();
      function removeBook(){
         let removeBtn = document.createElement('button');
         removeBtn.textContent = "Delete Book"
     
-        // let mainDiv = document.getElementById('books');
         div.appendChild(removeBtn);
     
         removeBtn.onclick = function(){
@@ -86,7 +108,7 @@ function displayBook(newBook){
             console.log(myLibrary.splice(newBook.id)); 
         }
     }
-    //clear page after element has been created
+    removeBook();
 }
 //create function to display all books from the array
 

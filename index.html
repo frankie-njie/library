@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Montserrat:wght@400;500&family=Nanum+Gothic&display=swap" rel="stylesheet"></head>
 
 <body>
     <div class="container">
-    <div><h3>This is your Book Library</h3>
+    <div class="header">
+        <h1>Your Library App</h3>
+        <h3>Click the button to add a new book</h3>
         <button class="create-form">Add New Book</button>  
     </div>
-    <div id="form" class="form">
+    <form id="form" class="form" action="" >
         <label for="">Tittle</label>
         <input type="text" class="title-input" value="">
 
@@ -26,10 +28,9 @@
         <input type="checkbox" class="status-input" value="">
 
         <button class="add-book">Add Book</button>
+    </form>
     </div>
-  
-    </div>
-    <div id="books"></div>
+    <div id="books" class="books-space"></div>
 
     <script src="scripts.js"></script>
 </body>
