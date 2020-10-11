@@ -116,11 +116,13 @@ function displayBook(newBook){
 
 function showForm(){
     form.style.visibility = "visible";
+    form.style.position = "relative";
 }
 //close form
 let closeForm = document.getElementsByClassName('close-form');
 closeForm[0].onclick = function(){
     form.style.visibility = "hidden";
+    form.style.position = "absolute";
 }
 
 
