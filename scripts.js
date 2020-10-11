@@ -117,6 +117,11 @@ function displayBook(newBook){
 function showForm(){
     form.style.visibility = "visible";
 }
+//close form
+let closeForm = document.getElementsByClassName('close-form');
+closeForm[0].onclick = function(){
+    form.style.visibility = "hidden";
+}
 
 
 formButton[0].addEventListener('click', showForm);
