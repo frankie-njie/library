@@ -1,29 +1,52 @@
-/* body{
+body{
     font-family: 'Montserrat', sans-serif; 
     background-color: #2d4059;
-    font-family: 2rem;
+    font-family: 18px;
 }
 h1{
     font-family: 'Courgette', cursive;
-    font-size: 4rem;
-    
+    font-size: 3.5rem;
     margin: auto;
+    color: #decdc3;
+}
+h3{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 1.2rem;
+    color: #e5e5e5;
+}
+h5{
+    font-size: 20px;
+    margin: 5px auto;
+    font-weight: 800;
 }
 button{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 20px;
-    color: #FFFFFF;
-    font-family: Open Sans;
-    font-size: 29px;
-    font-weight: 100;
-    padding: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #e5e5e5;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
     background-color: #EE6F57;
-    border: solid #337FED 1px;
+    border: solid #EE6F57 1px;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     text-align: center;
+    margin: 10px;
+}
+button:hover{
+    background: #ff414d;
+    border: solid #ff414d 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+label{
+    display: inline-block;
+    font-weight: 400;
 }
 .header{
     color: #e5e5e5;
@@ -31,4 +54,62 @@ button{
 }
 .form {
     visibility: hidden;
-} */
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    width: 30%;
+    height: 35%;
+    margin: 2% auto;
+    padding: 10px 2%;
+    /* position: absolute; */
+    background-color: #decdc3 ;
+    text-align: left;
+
+}
+.close-form{
+    float: right;
+    color: #333;
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .add-book{
+      margin: 0 35%;
+  }
+  .status-input{
+      width: 10%;
+      height: 18px;
+      padding: 0;
+      display: block;
+      text-align: left;
+  }
+  .books-space{
+      display: flex;
+      flex-flow: wrap;
+      padding: 0 10%;
+  }
+  .single-book{
+      -webkit-border-radius: 7px;
+      -moz-border-radius: 7px;
+      border-radius: 7px;
+      background-color: #e5e5e5;
+      width: 18%;
+      height: 32%;
+      text-align: center;
+      padding: 5px 10px;
+      margin: 8px 10px;
+  }
+  .book-statusBtn{
+    background-color: #00587a;
+    border: solid #00587a 1px;
+  }
+  .book-statusBtn:hover{
+    background-color: #2d4059;
+    border: solid #2d4059 1px;
+  }

@@ -55,7 +55,7 @@ function displayBook(newBook){
     let div = document.createElement('div');
     div.classList.add("single-book");
 
-    let title = document.createElement('p');
+    let title = document.createElement('h5');
     title.innerHTML = newBook.title;
 
     let author = document.createElement('p');
@@ -69,6 +69,7 @@ function displayBook(newBook){
 
     let bookStatusBtn = document.createElement('button')
     bookStatusBtn.innerHTML = "Book Status"
+    bookStatusBtn.classList.add('book-statusBtn');
 
     div.appendChild(title);
     div.appendChild(author);
@@ -99,6 +100,7 @@ function displayBook(newBook){
      function removeBook(){
         let removeBtn = document.createElement('button');
         removeBtn.textContent = "Delete Book"
+        removeBtn.classList.add('remove-bookBtn');
     
         div.appendChild(removeBtn);
     
