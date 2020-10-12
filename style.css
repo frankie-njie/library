@@ -93,6 +93,7 @@ input{
       display: flex;
       flex-flow: wrap;
       padding: 0 10%;
+      width:  80%;
   }
   .single-book{
       -webkit-border-radius: 7px;
