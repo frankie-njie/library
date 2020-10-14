@@ -35,6 +35,7 @@ button{
     cursor: pointer;
     text-align: center;
     margin: 10px;
+    outline: none;
 }
 button:hover{
     background: #ff414d;
@@ -53,7 +54,7 @@ label{
     text-align: center;
 }
 .form {
-    visibility: hidden;
+    display: none;
     -webkit-border-radius: 7px;
     -moz-border-radius: 7px;
     border-radius: 7px;
@@ -100,7 +101,7 @@ input{
       -moz-border-radius: 7px;
       border-radius: 7px;
       background-color: #e5e5e5;
-      width: 18%;
+      width: 22%;
       height: 32%;
       text-align: center;
       padding: 5px 10px;
@@ -118,15 +119,21 @@ input{
       .form{
         width: 80%;
         padding: 3%;
+        height: 42%;
       }
       .books-space{
           margin: auto;
           padding: 0;
+          flex-direction: column;
       }
     .single-book{
-
+        margin: 15px auto;
+        padding: 0;
+        width: 80%;
     }
     .add-book{
         padding: 10px;
+        width: 50%;
+        margin: 0 25%;
     }
   }

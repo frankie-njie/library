@@ -125,14 +125,12 @@ function displayBook(newBook){
 //create function to display all books from the array
 
 function showForm(){
-    form.style.visibility = "visible";
-    form.style.position = "relative";
+    form.style.display = "block";
 }
 //close form
 let closeForm = document.getElementsByClassName('close-form');
 closeForm[0].onclick = function(){
-    form.style.visibility = "hidden";
-    form.style.position = "absolute";
+    form.style.display = "none";
 }
 
 
