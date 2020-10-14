@@ -3,6 +3,13 @@ let form = document.getElementById('form');
 let formButton = document.getElementsByClassName('create-form');
 let addNewBook = document.getElementsByClassName('add-book');
 
+window.addEventListener('load', () => {
+    myLibrary = JSON.parse(localStorage.getItem('my_library')) || [];
+    myLibrary.forEach(book => {
+        displayBook(book);
+    });
+})
+
 //book constructor
 function Book(id, title, author, pages, status) {
     this.id = id
@@ -36,6 +43,7 @@ function addBookToLibrary(titleOfBook, authorOfBook, pagesOfBook, statusOfBook) 
 
         myLibrary.push(newBook);
         displayBook(newBook);
+        localStorage.setItem('my_library', JSON.stringify(myLibrary));
         form.reset();
     }
 
@@ -107,7 +115,9 @@ function displayBook(newBook){
         removeBtn.onclick = function(){
             mainDiv.removeChild(div);
             removeBtn.remove();
-            console.log(myLibrary.splice(newBook.id)); 
+            console.log(myLibrary.splice(newBook.id));
+            myLibrary.splice(newBook.id, 1);
+            localStorage.setItem('my_library', JSON.stringify(myLibrary));
         }
     }
     removeBook();
